@@ -1,0 +1,463 @@
+@import "vars";
+
+.__color {
+  &_white_main {
+    color: $pallete_white_main
+  }
+
+  &_white_600 {
+    color: $pallete_white_600
+  }
+
+  &_white_500 {
+    color: $pallete_white_500
+  }
+
+  &_white_400 {
+    color: $pallete_white_400
+  }
+
+  &_white_300 {
+    color: $pallete_white_300
+  }
+
+  &_white_200 {
+    color: $pallete_white_200
+  }
+
+  &_white_100 {
+    color: $pallete_white_100
+  }
+
+  &_black_main {
+    color: $pallete_black_main
+  }
+
+  &_black_600 {
+    color: $pallete_black_600
+  }
+
+  &_black_500 {
+    color: $pallete_black_500
+  }
+
+  &_black_400 {
+    color: $pallete_black_400
+  }
+
+  &_black_300 {
+    color: $pallete_black_300
+  }
+
+  &_black_200 {
+    color: $pallete_black_200
+  }
+
+  &_black_100 {
+    color: $pallete_black_100
+  }
+
+  &_blueDark_main {
+    color: $pallete_blueDark_main
+  }
+
+  &_blueDark_600 {
+    color: $pallete_blueDark_600
+  }
+
+  &_blueDark_500 {
+    color: $pallete_blueDark_500
+  }
+
+  &_blueDark_400 {
+    color: $pallete_blueDark_400
+  }
+
+  &_blueDark_300 {
+    color: $pallete_blueDark_300
+  }
+
+  &_blueDark_200 {
+    color: $pallete_blueDark_200
+  }
+
+  &_blueDark_100 {
+    color: $pallete_blueDark_100
+  }
+
+  &_blue_main {
+    color: $pallete_blue_main
+  }
+
+  &_blue_800 {
+    color: $pallete_blue_800
+  }
+
+  &_blue_700 {
+    color: $pallete_blue_700
+  }
+
+  &_blue_600 {
+    color: $pallete_blue_600
+  }
+
+  &_blue_500 {
+    color: $pallete_blue_500
+  }
+
+  &_blue_400 {
+    color: $pallete_blue_400
+  }
+
+  &_blue_300 {
+    color: $pallete_blue_300
+  }
+
+  &_blue_200 {
+    color: $pallete_blue_200
+  }
+
+  &_blue_100 {
+    color: $pallete_blue_100
+  }
+
+  &_blueSky_main {
+    color: $pallete_blueSky_main
+  }
+
+  &_blueSky_800 {
+    color: $pallete_blueSky_800
+  }
+
+  &_blueSky_700 {
+    color: $pallete_blueSky_700
+  }
+
+  &_blueSky_600 {
+    color: $pallete_blueSky_600
+  }
+
+  &_blueSky_500 {
+    color: $pallete_blueSky_500
+  }
+
+  &_blueSky_400 {
+    color: $pallete_blueSky_400
+  }
+
+  &_blueSky_300 {
+    color: $pallete_blueSky_300
+  }
+
+  &_blueSky_200 {
+    color: $pallete_blueSky_200
+  }
+
+  &_blueSky_100 {
+    color: $pallete_blueSky_100
+  }
+
+  &_pink_main {
+    color: $pallete_pink_main
+  }
+
+  &_pink_800 {
+    color: $pallete_pink_800
+  }
+
+  &_pink_700 {
+    color: $pallete_pink_700
+  }
+
+  &_pink_600 {
+    color: $pallete_pink_600
+  }
+
+  &_pink_500 {
+    color: $pallete_pink_500
+  }
+
+  &_pink_400 {
+    color: $pallete_pink_400
+  }
+
+  &_pink_300 {
+    color: $pallete_pink_300
+  }
+
+  &_pink_200 {
+    color: $pallete_pink_200
+  }
+
+  &_pink_100 {
+    color: $pallete_pink_100
+  }
+
+  &_green_main {
+    color: $pallete_green_main
+  }
+
+  &_green_800 {
+    color: $pallete_green_800
+  }
+
+  &_green_700 {
+    color: $pallete_green_700
+  }
+
+  &_green_600 {
+    color: $pallete_green_600
+  }
+
+  &_green_500 {
+    color: $pallete_green_500
+  }
+
+  &_green_400 {
+    color: $pallete_green_400
+  }
+
+  &_green_300 {
+    color: $pallete_green_300
+  }
+
+  &_green_200 {
+    color: $pallete_green_200
+  }
+
+  &_green_100 {
+    color: $pallete_green_100
+  }
+}
+
+
+.__bg {
+
+  &_white_main {
+    background-color: $pallete_white_main;
+  }
+
+  &_white_600 {
+    background-color: $pallete_white_600;
+  }
+
+  &_white_500 {
+    background-color: $pallete_white_500;
+  }
+
+  &_white_400 {
+    background-color: $pallete_white_400;
+  }
+
+  &_white_300 {
+    background-color: $pallete_white_300;
+  }
+
+  &_white_200 {
+    background-color: $pallete_white_200;
+  }
+
+  &_white_100 {
+    background-color: $pallete_white_100;
+  }
+
+  &_black_main {
+    background-color: $pallete_black_main;
+  }
+
+  &_black_600 {
+    background-color: $pallete_black_600;
+  }
+
+  &_black_500 {
+    background-color: $pallete_black_500;
+  }
+
+  &_black_400 {
+    background-color: $pallete_black_400;
+  }
+
+  &_black_300 {
+    background-color: $pallete_black_300;
+  }
+
+  &_black_200 {
+    background-color: $pallete_black_200;
+  }
+
+  &_black_100 {
+    background-color: $pallete_black_100;
+  }
+
+  &_blueDark_main {
+    background-color: $pallete_blueDark_main;
+  }
+
+  &_blueDark_600 {
+    background-color: $pallete_blueDark_600;
+  }
+
+  &_blueDark_500 {
+    background-color: $pallete_blueDark_500;
+  }
+
+  &_blueDark_400 {
+    background-color: $pallete_blueDark_400;
+  }
+
+  &_blueDark_300 {
+    background-color: $pallete_blueDark_300;
+  }
+
+  &_blueDark_200 {
+    background-color: $pallete_blueDark_200;
+  }
+
+  &_blueDark_100 {
+    background-color: $pallete_blueDark_100;
+  }
+
+  &_blue_main {
+    background-color: $pallete_blue_main;
+  }
+
+  &_blue_800 {
+    background-color: $pallete_blue_800;
+  }
+
+  &_blue_700 {
+    background-color: $pallete_blue_700;
+  }
+
+  &_blue_600 {
+    background-color: $pallete_blue_600;
+  }
+
+  &_blue_500 {
+    background-color: $pallete_blue_500;
+  }
+
+  &_blue_400 {
+    background-color: $pallete_blue_400;
+  }
+
+  &_blue_300 {
+    background-color: $pallete_blue_300;
+  }
+
+  &_blue_200 {
+    background-color: $pallete_blue_200;
+  }
+
+  &_blue_100 {
+    background-color: $pallete_blue_100;
+  }
+
+  &_blueSky_main {
+    background-color: $pallete_blueSky_main;
+  }
+
+  &_blueSky_800 {
+    background-color: $pallete_blueSky_800;
+  }
+
+  &_blueSky_700 {
+    background-color: $pallete_blueSky_700;
+  }
+
+  &_blueSky_600 {
+    background-color: $pallete_blueSky_600;
+  }
+
+  &_blueSky_500 {
+    background-color: $pallete_blueSky_500;
+  }
+
+  &_blueSky_400 {
+    background-color: $pallete_blueSky_400;
+  }
+
+  &_blueSky_300 {
+    background-color: $pallete_blueSky_300;
+  }
+
+  &_blueSky_200 {
+    background-color: $pallete_blueSky_200;
+  }
+
+  &_blueSky_100 {
+    background-color: $pallete_blueSky_100;
+  }
+
+  &_pink_main {
+    background-color: $pallete_pink_main;
+  }
+
+  &_pink_800 {
+    background-color: $pallete_pink_800;
+  }
+
+  &_pink_700 {
+    background-color: $pallete_pink_700;
+  }
+
+  &_pink_600 {
+    background-color: $pallete_pink_600;
+  }
+
+  &_pink_500 {
+    background-color: $pallete_pink_500;
+  }
+
+  &_pink_400 {
+    background-color: $pallete_pink_400;
+  }
+
+  &_pink_300 {
+    background-color: $pallete_pink_300;
+  }
+
+  &_pink_200 {
+    background-color: $pallete_pink_200;
+  }
+
+  &_pink_100 {
+    background-color: $pallete_pink_100;
+  }
+
+  &_green_main {
+    background-color: $pallete_green_main;
+  }
+
+  &_green_800 {
+    background-color: $pallete_green_800;
+  }
+
+  &_green_700 {
+    background-color: $pallete_green_700;
+  }
+
+  &_green_600 {
+    background-color: $pallete_green_600;
+  }
+
+  &_green_500 {
+    background-color: $pallete_green_500;
+  }
+
+  &_green_400 {
+    background-color: $pallete_green_400;
+  }
+
+  &_green_300 {
+    background-color: $pallete_green_300;
+  }
+
+  &_green_200 {
+    background-color: $pallete_green_200;
+  }
+
+  &_green_100 {
+    background-color: $pallete_green_100;
+  }
+}

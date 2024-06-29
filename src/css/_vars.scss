@@ -1,0 +1,346 @@
+$color_blacky: #000000;
+$color_black: #202020;
+$color_gray_dark: #999999;
+$color_gray: #d2d2d2;
+$color_gray_light: #f3f3f3;
+$color_white: #ffffff;
+
+$pallete_white_main: #fff;
+$pallete_white_600: rgba(255, 255, 255, 0.88);
+$pallete_white_500: rgba(255, 255, 255, 0.64);
+$pallete_white_400: rgba(255, 255, 255, 0.4);
+$pallete_white_300: rgba(255, 255, 255, 0.14);
+$pallete_white_200: rgba(255, 255, 255, 0.09);
+$pallete_white_100: rgba(255, 255, 255, 0.06);
+$pallete_black_main: #0d1620;
+$pallete_black_600: rgba(13, 22, 32, 0.88);
+$pallete_black_500: rgba(13, 22, 32, 0.48);
+$pallete_black_400: rgba(13, 22, 32, 0.32);
+$pallete_black_300: rgba(13, 22, 32, 0.1);
+$pallete_black_200: rgba(13, 22, 32, 0.09);
+$pallete_black_100: rgba(13, 22, 32, 0.04);
+$pallete_blueDark_main: #070f2c;
+$pallete_blueDark_600: rgba(7, 15, 44, 0.9);
+$pallete_blueDark_500: rgba(7, 15, 44, 0.64);
+$pallete_blueDark_400: rgba(7, 15, 44, 0.32);
+$pallete_blueDark_300: rgba(7, 15, 44, 0.12);
+$pallete_blueDark_200: rgba(7, 15, 44, 0.08);
+$pallete_blueDark_100: rgba(7, 15, 44, 0.04);
+$pallete_blue_main: #2152ff;
+$pallete_blue_800: #002dcc;
+$pallete_blue_700: #0037ff;
+$pallete_blue_600: rgba(33, 82, 255, 0.88);
+$pallete_blue_500: rgba(33, 82, 255, 0.64);
+$pallete_blue_400: rgba(33, 82, 255, 0.4);
+$pallete_blue_300: rgba(33, 82, 255, 0.14);
+$pallete_blue_200: rgba(33, 82, 255, 0.09);
+$pallete_blue_100: rgba(33, 82, 255, 0.05);
+$pallete_blueSky_main: #8eaffb;
+$pallete_blueSky_800: #3f77f8;
+$pallete_blueSky_700: #6e97f7;
+$pallete_blueSky_600: rgba(142, 175, 251, 0.88);
+$pallete_blueSky_500: rgba(142, 175, 251, 0.64);
+$pallete_blueSky_400: rgba(142, 175, 251, 0.4);
+$pallete_blueSky_300: rgba(142, 175, 251, 0.14);
+$pallete_blueSky_200: rgba(142, 175, 251, 0.09);
+$pallete_blueSky_100: rgba(142, 175, 251, 0.05);
+$pallete_pink_main: #ff005b;
+$pallete_pink_800: #960034;
+$pallete_pink_700: #c50046;
+$pallete_pink_600: rgba(255, 0, 91, 0.88);
+$pallete_pink_500: rgba(255, 0, 91, 0.64);
+$pallete_pink_400: rgba(255, 0, 91, 0.4);
+$pallete_pink_300: rgba(255, 0, 91, 0.14);
+$pallete_pink_200: rgba(255, 0, 91, 0.09);
+$pallete_pink_100: rgba(255, 0, 91, 0.05);
+$pallete_green_main: #00dd3e;
+$pallete_green_800: #008c27;
+$pallete_green_700: #00bb35;
+$pallete_green_600: rgba(0, 221, 62, 0.88);
+$pallete_green_500: rgba(0, 221, 62, 0.64);
+$pallete_green_400: rgba(0, 221, 62, 0.4);
+$pallete_green_300: rgba(0, 221, 62, 0.14);
+$pallete_green_200: rgba(0, 221, 62, 0.09);
+$pallete_green_100: rgba(0, 221, 62, 0.05);
+
+$color_text_primary: $pallete_blueDark_main;
+$color_text_secondary: $pallete_blueDark_500;
+$color_text_disabled: $pallete_blueDark_300;
+$color_text_critical: $pallete_pink_main;
+$color_text_success: $pallete_green_main;
+$color_text_primary-inverse: $pallete_white_main;
+$color_text_primary-on-color: $pallete_blue_main;
+$color_text_accent: $pallete_blue_main;
+$color_text_accent-hover: $pallete_blue_800;
+$color_bg_primary: $pallete_white_main;
+$color_bg_secondary: $pallete_black_100;
+$color_bg_accent: $pallete_blue_main;
+$color_bg_primary-inverse: $pallete_blueDark_main;
+$color_bg_accent-subdued: $pallete_blue_400;
+$color_bg_accent-hover: $pallete_blue_800;
+$color_bg_accent-active: $pallete_blueDark_main;
+$color_bg_secondary-hover: $pallete_black_200;
+$color_bg_secondary-active: $pallete_black_300;
+$color_bg_primary-hover: $pallete_blueDark_200;
+$color_bg_primary-active: $pallete_blueDark_300;
+$color_bg_primary-inverse-hover: $pallete_blueDark_200;
+$color_bg_primary-inverse-active: $pallete_white_main;
+$color_icon_primary: $pallete_blue_main;
+$color_icon_secondary: $pallete_blueDark_main;
+$color_icon_critical: $pallete_pink_main;
+$color_icon_critical-hover: $pallete_white_main;
+$color_icon_secondary-hover: $pallete_blueDark_500;
+$color_bg_critical: $pallete_pink_main;
+$color_bg_disabled: $pallete_blueDark_100;
+$color_icon_disabled: $pallete_blueDark_300;
+$color_bg_primary-subdued: $pallete_white_400;
+$color_icon_primary-inverse: $pallete_white_main;
+$color_icon_secondary-subdued: $pallete_blueDark_400;
+$color_stroke_primary: $pallete_blue_200;
+$color_stroke_primary-hover: $pallete_blue_200;
+$color_stroke_primary-active: $pallete_blue_main;
+$color_stroke_primary-disabled: $pallete_blueDark_200;
+$color_icon_secondary-subdued-hover: $pallete_blue_main;
+$color_icon_secondary-subdued-active: $pallete_blue_700;
+$color_text_accent-active: $pallete_blueDark_main;
+$color_stroke_Critical: $pallete_pink_main;
+$color_icon_primary-inverse-hover: $pallete_white_main;
+$color_icon_primary-inverse-active: $pallete_white_main;
+$color_icon_primary-hover: $pallete_blue_800;
+$color_icon_primary-active: $pallete_blueDark_main;
+$color_stroke_secondary: $pallete_blueDark_200;
+$color_bg_secondary-subdued: $pallete_blue_200;
+$color_text_accent-inverse: $pallete_blueSky_main;
+$color_bg_critical-hover: $pallete_pink_800;
+$color_bg_critical-active: $pallete_pink_700;
+$color_text_secondary-inverse: $pallete_white_400;
+$color_bg_solid: #F5F6F6;
+$color_bg: $color_black;
+
+$color_border: rgba(255, 255, 255, 0.2);
+
+$color_primary: $color_bg_accent;
+$color_primary_hover: $pallete_blue_700;
+$color_primary_active: $pallete_blue_800;
+
+// $color_border: $color_primary;
+
+$color_selection_text: white;
+$color_selection_bg: $color_primary;
+
+$color_placeholder: $color_gray;
+
+$header_height: 96px;
+$header_height_mob: 80px;
+
+$container_width: calc((1776px + 1rem * 4) * var(--xscale));
+$container_width_small: calc((1200px + 1rem * 4) * var(--xscale));
+$sidebar_width: 260px;
+
+$desktop: 1440px;
+$smallDesktop: 1560px;
+$verySmallDesktop: 1280px;
+$tablet: 820px;
+$tablet_min: 821px;
+$mobile: 495px;
+$mobile_min: 496px;
+
+$font: "HelveticaNeueCyr", "Helvetica", system-ui, sans-serif;
+$fontAlt: "HelveticaNeueCyr", "Helvetica", system-ui, sans-serif;
+$fontIcon: "iconmoon";
+
+@mixin font {
+  font-family: $font;
+}
+
+@mixin fontAlt {
+  font-family: $fontAlt;
+}
+
+@mixin scrollWithoutScrol {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+@mixin scrollWithoutScrollHorizontal {
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-height: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    height: 0px;
+    background: transparent;
+  }
+}
+
+@mixin transition {
+  transition: 0.2s;
+
+  &:hover {
+    transition: 0.05s;
+  }
+
+  &:hover {
+    transition: 0.02s;
+  }
+}
+
+@mixin sideFaders($width: 12px, $color: $color_white, $inset: 0%, $isTopBottom: false) {
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+
+    @if ($isTopBottom) {
+      height: $width;
+      left: 0;
+      right: 0;
+    }
+
+    @else {
+      width: $width;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &:before {
+    @if ($isTopBottom) {
+      background: linear-gradient(to bottom, $color $inset, transparentize($color, 1));
+      top: 0;
+    }
+
+    @else {
+      background: linear-gradient(to right, $color $inset, transparentize($color, 1));
+      left: 0;
+    }
+  }
+
+  &:after {
+    @if ($isTopBottom) {
+      background: linear-gradient(to top, $color $inset, transparentize($color, 1));
+      bottom: 0;
+    }
+
+    @else {
+      background: linear-gradient(to left, $color $inset, transparentize($color, 1));
+      right: 0;
+    }
+  }
+}
+
+@mixin actions($margin: 0.5rem) {
+  display: flex;
+  gap: $margin;
+}
+
+@mixin verySmallDeskMax {
+  @media (max-width: $verySmallDesktop) {
+    @content;
+  }
+}
+
+@mixin smallDeskMax {
+  @media (max-width: $smallDesktop) {
+    @content;
+  }
+}
+
+@mixin tabletMax {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tabletMin {
+  @media (min-width: #{$tablet+ 1px}) {
+    @content;
+  }
+}
+
+@mixin mobileMax {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin mobileMin {
+  @media (min-width: #{$mobile + 1px}) {
+    @content;
+  }
+}
+
+@mixin shadowBlock($needPadding: false, $needBlur: true) {
+  border-radius: 0.5rem;
+  background: $pallete_white_500;
+  box-shadow:
+    0px 4px 13.2px 0px rgba(7, 15, 44, 0.04),
+    0px 4px 8.9px 0px rgba(7, 15, 44, 0.04);
+
+  @if($needBlur) {
+    backdrop-filter: blur(1rem);
+  }
+
+  @else {
+    background: $pallete_white_main;
+  }
+
+  @if ($needPadding) {
+    padding: 0.75rem 1.25rem;
+
+    @include mobileMax() {
+      padding: 0.75rem;
+    }
+  }
+}
+
+@mixin imgDisableSelect {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@mixin aspectRatioPolyfill($aratio) {
+  aspect-ratio: $aratio;
+
+  @supports not (aspect-ratio: $aratio) {
+    &::before {
+      float: left;
+      padding-top: calc($aratio);
+      content: "";
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+}
+
+@mixin hoverableImg($saturate: 0%, $brightness: 90%) {
+  filter: saturate(0%);
+  -webkit-filter: saturate($saturate);
+
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    filter: none;
+    -webkit-filter: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    filter: none;
+    -webkit-filter: none;
+  }
+}

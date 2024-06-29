@@ -1,0 +1,184 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: $container_width;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  &.__small {
+    // max-width: $container_width_small;
+    @include smallDeskMax {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+    }
+    @include verySmallDeskMax {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    @include tabletMax {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @include mobileMax {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  &.__normal {}
+
+  @include tabletMax {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @include mobileMax {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+h5,
+.h5 {
+  @include h5;
+}
+
+h6,
+.h6 {
+  @include h6;
+}
+
+.p1 {
+  @include p1;
+}
+
+p,
+.p2 {
+  @include p2;
+}
+
+.p3 {
+  @include p3;
+}
+
+.p4 {
+  @include p4;
+}
+
+
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  transition: 0.4s;
+
+  @include smallDeskMax {
+    gap: 7.5rem;
+  }
+
+  @include tabletMax {
+    gap: 6rem;
+  }
+
+  @include mobileMax {
+    gap: 5rem;
+  }
+
+  &.__inner {
+    background: $color_bg_secondary;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @include mobileMax {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &.__blue {
+    background: $color_bg_accent;
+    color: $color_text_primary-inverse;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @include mobileMax {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &.__fading {
+    transition: 0s;
+    opacity: 0;
+  }
+}
+
+#_build_time {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0.25rem 0.5rem;
+  border-top-right-radius: 0.5rem;
+  z-index: 200;
+  background-color: $color_white;
+  box-shadow: 0 0 1rem transparentize($color_black, 0.8);
+  font-size: 0.75rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+#_portal_tooltip {
+  max-width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+
+.typoBox {
+  color: $color_text_secondary;
+  @include p2;
+
+  .__dark {
+    color: $color_text_primary;
+  }
+
+  b {}
+
+  // &>* + * {
+  //   margin-top: calc(1em * 1.28);
+  // }
+
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+}
+
+.scroller {
+  user-select: unset !important;
+}

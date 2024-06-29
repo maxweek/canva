@@ -1,0 +1,182 @@
+@mixin h1 {
+  @include fontAlt;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -1.08px;
+
+  @include smallDeskMax {
+    font-size: 4.5rem;
+  }
+
+  @include mobileMax {
+    font-size: 1.75rem;
+    line-height: 100%;
+    letter-spacing: -0.56px;
+  }
+}
+
+@mixin h2 {
+  @include fontAlt;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.96px;
+
+  @include smallDeskMax {
+    font-size: 3.375rem;
+  }
+
+  @include mobileMax {
+    font-size: 1.5rem;
+    letter-spacing: -0.48px;
+  }
+}
+
+@mixin h3 {
+  @include fontAlt;
+  font-size: 3.375rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+
+  @include smallDeskMax {
+    font-size: 3rem;
+  }
+
+  @include mobileMax {
+    font-size: 1.5rem;
+    // letter-spacing: -0.44px;
+  }
+}
+
+@mixin h4 {
+  @include fontAlt;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.56px;
+
+  @include smallDeskMax {
+    font-size: 2rem;
+  }
+
+  @include mobileMax {
+    font-size: 1.375rem;
+    letter-spacing: -0.4px;
+  }
+}
+
+@mixin h5 {
+  @include fontAlt;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.48px;
+
+
+  @include smallDeskMax {
+    font-size: 1.75rem;
+  }
+
+  @include mobileMax {
+    font-size: 1.25rem;
+    letter-spacing: -0.36px;
+  }
+}
+
+@mixin h6 {
+  @include fontAlt;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.56px;
+
+
+  @include smallDeskMax {
+    font-size: 1.5rem;
+  }
+
+  @include mobileMax {
+    font-size: 1.125rem;
+    letter-spacing: -0.36px;
+  }
+}
+
+@mixin p1 {
+  @include font;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 128%;
+
+  @include smallDeskMax {
+    font-size: 1.125rem;
+  }
+
+  @include mobileMax {
+    font-size: 1rem;
+  }
+}
+
+@mixin p2 {
+  @include font;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 128%;
+
+  @include smallDeskMax {
+    font-size: 1rem;
+  }
+
+  @include mobileMax {
+    font-size: 0.875rem;
+  }
+}
+
+@mixin p3 {
+  @include font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 128%;
+
+  @include smallDeskMax {
+    font-size: 0.875rem;
+  }
+
+  @include mobileMax {
+    font-size: 0.75rem;
+  }
+}
+
+@mixin p4 {
+  @include font;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 110%;
+
+  @include tabletMax {
+    font-size: .75rem;
+  }
+}
+
+@mixin cta {
+  @include font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 110%;
+}
+
+
+@mixin btnStyle($color, $colorHover, $colorActive, $colorText) {
+  background-color: $color;
+  color: $colorText;
+
+  &:focus,
+  &:hover {
+    background-color: $colorHover;
+  }
+
+  &:active {
+    background-color: $colorActive;
+  }
+}

@@ -1,0 +1,22 @@
+@import "vars";
+@import "fonts";
+@import "base";
+@import "typo";
+@import "icons";
+@import "colors";
+@import "global";
+
+:root {
+  --vh: 1;
+  --xscale: 1;
+}
+
+body {
+  transition: .4s ease-in-out;
+  &.__fading {
+    opacity: 0;
+  }
+  &.__bgAlt {
+    background-color: $color_bg_solid;
+  }
+}

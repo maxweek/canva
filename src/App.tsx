@@ -30,7 +30,7 @@ interface IOptions {
   },
 }
 
-interface MyLayer extends Konva.Layer {
+export interface MyLayer extends Konva.Layer {
   _attrs: IOptions
 }
 
@@ -113,9 +113,9 @@ function App() {
     // createInitialGrid(layer);
 
     const handlePointerDown = (e: Konva.KonvaEventObject<PointerEvent>) => {
-      
+
       console.log(e.evt.button)
-      if(e.evt.button === 1) _OPTIONS.space = true
+      if (e.evt.button === 1) _OPTIONS.space = true
       if (_OPTIONS.space) {
         _OPTIONS.dragging = true;
         _OPTIONS.lastPosition = { x: e.evt.clientX, y: e.evt.clientY };
@@ -128,7 +128,7 @@ function App() {
         if (layer && _OPTIONS.lastPosition) {
           const dx = e.evt.clientX - _OPTIONS.lastPosition.x;
           const dy = e.evt.clientY - _OPTIONS.lastPosition.y;
-          
+
           _OPTIONS.lastPosition = { x: e.evt.clientX, y: e.evt.clientY };
           _OPTIONS.velocity = { x: dx, y: dy };
           _OPTIONS.targetX = _OPTIONS.x + dx
@@ -144,7 +144,7 @@ function App() {
       if (_OPTIONS.space) {
         applyInertia();
       }
-      if(e.evt.button === 1) _OPTIONS.space = false
+      if (e.evt.button === 1) _OPTIONS.space = false
       _OPTIONS.velocity = { x: 0, y: 0 };
     };
 
@@ -167,9 +167,9 @@ function App() {
       const layer = layerRef.current;
       if (layer) {
         const { x: vx, y: vy } = _OPTIONS.velocity;
-        _OPTIONS.targetX = _OPTIONS.x + vx * 100 
-        _OPTIONS.targetY = _OPTIONS.y + vy * 100 
-        
+        _OPTIONS.targetX = _OPTIONS.x + vx * 100
+        _OPTIONS.targetY = _OPTIONS.y + vy * 100
+
         handleGo(layer, _OPTIONS, 0.8)
       }
     };
@@ -192,23 +192,36 @@ function App() {
 
   return (
     <>
-      <Stage
-        width={window.innerWidth}
-        height={window.innerHeight}
-        onWheel={handleWheel}
-        culling={true}
-        cullingPadding={10}
-        ref={stageRef}
-        onPointerMove={handlePointerMove}
-      >
+      <div className='app'>
+        <Stage
+          width={window.innerWidth}
+          height={window.innerHeight}
+          onWheel={handleWheel}
+          culling={true}
+          cullingPadding={10}
+          ref={stageRef}
+          onPointerMove={handlePointerMove}
+        >
 
-        <Layer ref={layerRef} x={0} y={0} fill={'#fff0df'}>
-          {/* <Grid width={window.innerWidth * 2} height={window.innerHeight * 2} cellSize={100} /> */}
-          <Rect width={50} height={50} fill="red" />
-          <Circle x={200} y={200} stroke="black" radius={50} ref={pointRef} />
-          <ProductCard x={300} y={300} imageUrl={''} title={'Lorem ipsum dolor set amet'} description={'Lorem ipsum dolor set ametLorem ipsum dolor set ametLorem ipsum dolor set amet'} buttonText={'Кнапка'} width={300}/>
-        </Layer>
-      </Stage>
+          <Layer ref={layerRef} x={0} y={0} fill={'#fff0df'}>
+            {/* <Grid width={window.innerWidth * 2} height={window.innerHeight * 2} cellSize={100} /> */}
+            <Rect width={50} height={50} fill="red" />
+            <Circle x={200} y={200} stroke="black" radius={50} ref={pointRef} />
+            <ProductCard
+              x={300}
+              y={300}
+              layerRef={layerRef}
+              imageUrl={''}
+              title={'Lorem ipsum dolor set amet'}
+              description={'Lorem ipsum dolor set ametLorem ipsum dolor set ametLorem ipsum dolor set amet'}
+              buttonText={'Кнапка'}
+              width={300}
+            />
+          </Layer>
+        </Stage>
+      </div>
+      <div id='_cards'>
+      </div>
     </>
   )
 }
@@ -291,6 +304,12 @@ function scale(layer: MyLayer, options: IOptions, deltaY: number, pointerPositio
 
 const handleGo = (layer: MyLayer, options: IOptions, type: number = 0.4) => {
   anim.kill?.()
+  const event = new CustomEvent('layerShift', {
+    detail: {
+      x: options.x,
+      y: options.y
+    }
+  })
   if (!type) {
     options.x = options.targetX
     options.y = options.targetY
@@ -300,6 +319,7 @@ const handleGo = (layer: MyLayer, options: IOptions, type: number = 0.4) => {
     layer.y(options.y)
     layer.scaleX(options.scaleX)
     layer.scaleY(options.scaleY)
+    window.dispatchEvent(event)
     return
   }
 
@@ -317,6 +337,7 @@ const handleGo = (layer: MyLayer, options: IOptions, type: number = 0.4) => {
       // console.log(layer._attrs.scaleX)
       layer.scaleX(options.scaleX)
       layer.scaleY(options.scaleY)
+      window.dispatchEvent(event)
     }
   })
 }
@@ -363,7 +384,7 @@ const createInitialGrid = (layer: Konva.Layer) => {
 };
 
 const updateGridOpacity = (layer: Konva.Layer, scale: number) => {
-  let tScale = scale * scale / 30 / 2 
+  let tScale = scale * scale / 30 / 2
   tScale = tScale <= 0 ? 0 : tScale
   let tWidth = (1 - scale) * 10
   console.log(scale, tScale, tWidth)

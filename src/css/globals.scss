@@ -20,3 +20,33 @@ body {
     background-color: $color_bg_solid;
   }
 }
+
+.card {
+  display: flex;
+  pointer-events: none;
+
+  .anim {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border: 2px solid purple;
+      background: linear-gradient(to right, red, blue);
+      animation: rotate infinite 2s;
+    }
+  }
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

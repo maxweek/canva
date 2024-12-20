@@ -5,6 +5,7 @@ import { MyLayer } from "./App";
 import { Html, Portal } from "react-konva-utils";
 import { Rect as IRect, RectConfig } from "konva/lib/shapes/Rect";
 import { Group as IGroup } from "konva/lib/Group";
+import { Vector2d } from "konva/lib/types";
 
 interface ProductCardProps {
   imageUrl: string;
@@ -14,15 +15,16 @@ interface ProductCardProps {
   width: number;
   x: number;
   y: number;
-  layerRef: React.RefObject<MyLayer>
+  onPositionChange?: (value: Vector2d) => void
 }
 
-const ProductCard: FC<ProductCardProps> = () => {
+const ProductCard: FC<ProductCardProps> = (props) => {
   const [cardHeight, setCardHeight] = useState(0);
   const rectRef = useRef<IRect>(null)
   const groupRef = useRef<IGroup>(null)
   const cardRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(true);
+  const [position, setPosition] = useState<Vector2d>({ x: props.x, y: props.y });
 
 
   const portalTarget = document.getElementById('_cards');
@@ -47,12 +49,16 @@ const ProductCard: FC<ProductCardProps> = () => {
   }, [])
 
   const handleLayerShift = (e: any) => {
-    const { x, y } = e.detail
-    console.log(x,y)
-    
+    if (!groupRef.current) return;
+    const layer = e.detail
+    const element = groupRef.current.getPosition();
+    const x = element.x + layer.x
+    const y = element.y + layer.y
+    // console.log(x,y)
+
     const vis = x < 0 && y < 0 || x > window.innerWidth && y > window.innerHeight
     setVisible(!vis)
-    console.log(!vis)
+    // console.log(!vis)
   }
 
   const handleVisible = () => {
@@ -61,7 +67,9 @@ const ProductCard: FC<ProductCardProps> = () => {
 
   const handleDragMove = (e: any) => {
     if (!groupRef.current) return;
+    const newPos = { x: e.target.x(), y: e.target.y() };
     // Пример обработки перетаскивания
+    props.onPositionChange?.(newPos);
     // const { x, y } = e.target.getClientRect(); // Получаем новые координаты
     const { x, y } = e.target.getPosition(); // Получаем новые координаты
     console.log('Dragging to:', x, y); // Можно обработать координаты перетаскивания
@@ -79,6 +87,8 @@ const ProductCard: FC<ProductCardProps> = () => {
 
   const handleDragEnd = (e: any) => {
     console.log('Drag ended')
+    const newPos = { x: e.target.x(), y: e.target.y() };
+    setPosition(newPos);
   }
 
 

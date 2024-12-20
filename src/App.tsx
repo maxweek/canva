@@ -6,6 +6,7 @@ import Konva from 'konva'
 import gsap, { Cubic } from 'gsap'
 import { Vector2d } from 'konva/lib/types'
 import ProductCard from './testCard'
+import Taser from './taser'
 
 let anim: gsap.core.Tween = {} as gsap.core.Tween;
 
@@ -33,12 +34,26 @@ interface IOptions {
 export interface MyLayer extends Konva.Layer {
   _attrs: IOptions
 }
-
+interface TaserPositions {
+  [key: string]: {
+    start: Vector2d
+    end: Vector2d
+  }
+}
 function App() {
   const [count, setCount] = useState(0)
   const layerRef = useRef<MyLayer>(null);
   const stageRef = useRef<Konva.Stage>(null);
   const pointRef = useRef<Konva.Circle>(null);
+
+  const [positions, setPositions] = useState<TaserPositions>({
+    line1: { start: { x: 0, y: 0 }, end: { x: 0, y: 0 } },
+    line2: { start: { x: 0, y: 0 }, end: { x: 0, y: 0 } },
+    line3: { start: { x: 0, y: 0 }, end: { x: 0, y: 0 } },
+    line4: { start: { x: 0, y: 0 }, end: { x: 0, y: 0 } },
+    line5: { start: { x: 0, y: 0 }, end: { x: 0, y: 0 } },
+    line6: { start: { x: 0, y: 0 }, end: { x: 0, y: 0 } },
+  });
 
   const _OPTIONS = useRef<IOptions>({
     x: 0,
@@ -103,6 +118,15 @@ function App() {
   const handlePointerMove = (e: KonvaEventObject<PointerEvent>) => {
   }
 
+  const updatePosition = (id: string, type: 'start' | 'end', newPos: Vector2d) => {
+    setPositions((prev) => ({
+      ...prev,
+      [id]: {
+        ...prev[id],
+        [type]: { x: newPos.x + 50, y: newPos.y + 50 }, // Центр компонента
+      },
+    }));
+  };
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -207,16 +231,69 @@ function App() {
             {/* <Grid width={window.innerWidth * 2} height={window.innerHeight * 2} cellSize={100} /> */}
             <Rect width={50} height={50} fill="red" />
             <Circle x={200} y={200} stroke="black" radius={50} ref={pointRef} />
+            <Taser id={"line1"} positions={positions} layerRef={layerRef} />
+            <Taser id={"line2"} positions={positions} layerRef={layerRef} />
+            <Taser id={"line3"} positions={positions} layerRef={layerRef} />
+            <Taser id={"line4"} positions={positions} layerRef={layerRef} />
+            <Taser id={"line5"} positions={positions} layerRef={layerRef} />
+            <Taser id={"line6"} positions={positions} layerRef={layerRef} />
             <ProductCard
-              x={300}
-              y={300}
-              layerRef={layerRef}
+              x={0}
+              y={500}
               imageUrl={''}
               title={'Lorem ipsum dolor set amet'}
               description={'Lorem ipsum dolor set ametLorem ipsum dolor set ametLorem ipsum dolor set amet'}
               buttonText={'Кнапка'}
               width={300}
+              onPositionChange={(newPos) => {
+                updatePosition("line1", "start", newPos)
+                updatePosition("line5", "start", newPos)
+                updatePosition("line4", "end", newPos)
+              }}
             />
+            <ProductCard
+              x={500}
+              y={0}
+              imageUrl={''}
+              title={'Lorem ipsum dolor set amet'}
+              description={'Lorem ipsum dolor set ametLorem ipsum dolor set ametLorem ipsum dolor set amet'}
+              buttonText={'Кнапка'}
+              width={300}
+              onPositionChange={(newPos) => {
+                updatePosition("line2", "start", newPos)
+                updatePosition("line1", "end", newPos)
+                updatePosition("line6", "end", newPos)
+              }}
+            />
+            <ProductCard
+              x={1000}
+              y={500}
+              imageUrl={''}
+              title={'Lorem ipsum dolor set amet'}
+              description={'Lorem ipsum dolor set ametLorem ipsum dolor set ametLorem ipsum dolor set amet'}
+              buttonText={'Кнапка'}
+              width={300}
+              onPositionChange={(newPos) => {
+                updatePosition("line3", "start", newPos)
+                updatePosition("line2", "end", newPos)
+                updatePosition("line5", "end", newPos)
+              }}
+            />
+            <ProductCard
+              x={500}
+              y={1000}
+              imageUrl={''}
+              title={'Lorem ipsum dolor set amet'}
+              description={'Lorem ipsum dolor set ametLorem ipsum dolor set ametLorem ipsum dolor set amet'}
+              buttonText={'Кнапка'}
+              width={300}
+              onPositionChange={(newPos) => {
+                updatePosition("line3", "end", newPos)
+                updatePosition("line4", "start", newPos)
+                updatePosition("line6", "start", newPos)
+              }}
+            />
+
           </Layer>
         </Stage>
       </div>
